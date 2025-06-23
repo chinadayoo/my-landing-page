@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>IT導入補助金LP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      background-color: #ffffff;
+      font-family: sans-serif;
+    }
+
+    .lp-container {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* ★ここで1画面にぴったり収まるように！ */
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeIn 1.2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .lp-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 高さと横幅両方フィット！ */
+      display: block;
+    }
+
+    .clickable {
+      position: absolute;
+      display: block;
+      z-index: 10;
+      transition: transform 0.3s ease;
+    }
+
+    .clickable:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-request {
+      top: 2.5%;
+      right: 13%;
+      width: 120px;
+      height: 40px;
+    }
+
+    .btn-contact {
+      top: 2.5%;
+      right: 3%;
+      width: 120px;
+      height: 40px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .lp-container {
+        height: auto;
+      }
+      .lp-container img {
+        height: auto;
+        object-fit: contain;
+      }
+      .clickable {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lp-container">
+    <img src="img/lp-canva.jpg" alt="LP画像">
+
+    <a href="https://example.com/request" class="clickable btn-request"></a>
+    <a href="https://example.com/contact" class="clickable btn-contact"></a>
+  </div>
+
+</body>
+</html>
